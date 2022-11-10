@@ -45,13 +45,17 @@ number = st.number_input('Choisir le nombre de topics',min_value=1,max_value=15,
 model = model()
 vectorizer = vect()
 
-st.write(model,vectorizer,number,text)
-topics =""
+
+
 polarity, topics_list = fonction_prediction(model,vectorizer,number,text)
-for topic in topics_list:
-    topics += topic+' , '
-topics = topics[0:-3]
-st.write("polarité de l'avis : ",polarity,"les topics de l'avis sont : ",topics)
+if polarity<0:
+    topics =""
+    for topic in topics_list:
+        topics += topic+' , '
+    topics = topics[0:-3]
+    st.write("polarité de l'avis : ",polarity,"les topics de l'avis sont : ",topics)
+else:
+    st.write("polarité de l'avis : ",polarity,"l'avis est positif donc il n'y a pas de topics à trouver")
 
 if st.button("Detecter le sujet d'insatisfaction"):
     if text =="":
