@@ -31,6 +31,22 @@ def model():
         model = pickle.load(f)
     return model
 
+
+genre = st.sidebar.radio('Quel Texte Analyser ?',('Avis dataset', 'Texte Libre'))
+if genre == 'Avis dataset':
+    number = st.sidebar.number_input('Choisir le numéro de l\'index',min_value=1,max_value=10000,step=1)
+    if st.sidebar.button('Prédire un avis via le numéro d\'index'):
+        text = text_dataset(number-1)
+        st.session_state.text = text
+        st.sidebar.write(text)
+    if st.sidebar.button('Prédire un avis aléatoire'):
+        random = rd.randint(0,9999)
+        text = text_dataset(random)
+        st.session_state.text = text
+        st.sidebar.write(text)
+else:
+    text= st.sidebar.text_input("Entrez un nouvel avis:")
+
 number = st.number_input('Choisir le nombre de topics',min_value=1,max_value=15,step=1)
 model = model()
 vectorizer = vect()
@@ -61,26 +77,3 @@ if st.button("Detecter le sujet d'insatisfaction"):
     else:
         st.write("fegooeeogeegoe")
         #st.write(fonction_prediction(model(),vect(),number,text))
-
-
-
-genre = st.sidebar.radio('Quel Texte Analyser ?',('Avis dataset', 'Texte Libre'))
-if genre == 'Avis dataset':
-    number = st.sidebar.number_input('Choisir le numéro de l\'index',min_value=1,max_value=10000,step=1)
-    if st.sidebar.button('Prédire un avis via le numéro d\'index'):
-        text = text_dataset(number-1)
-        st.session_state.text = text
-        st.sidebar.write(text)
-    if st.sidebar.button('Prédire un avis aléatoire'):
-        random = rd.randint(0,9999)
-        text = text_dataset(random)
-        st.session_state.text = text
-        st.sidebar.write(text)
-else:
-    text= st.sidebar.text_input("Entrez un nouvel avis:")
-
-
-
-
-
-
