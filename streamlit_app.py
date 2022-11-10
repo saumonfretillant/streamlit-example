@@ -7,8 +7,7 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 import random as rd
-from text_dataset import text_dataset
-from text_dataset import vect
+from text_dataset import text_dataset, vect, model
 
 genre = st.sidebar.radio('Quel Texte Analyser ?',('Avis dataset', 'Texte Libre'))
 if genre == 'Avis dataset':
