@@ -13,20 +13,16 @@ genre = st.sidebar.radio(
     "Quel Texte Analyser ?",
     ('Avis dataset', 'Texte Libre'))
 if genre == 'Avis dataset':
-    st.write('You selected comedy.')
+    number = st.number_input('Choisir le numéro de l'index',min_value=1,max_value=10000,step=1)
 else:
-    text= st.sidebar.text_input("Entrez un texte:")
+    text= st.sidebar.text_input("Entrez un nouvel avis:")
 
-categories_count = ['1', '2', '3']
-chosen_count = st.selectbox(
-    'Choisir le nombre de topic !',
-    categories_count
-)
+number = st.number_input('Choisir le nombre de topics',min_value=1,max_value=15,step=1)
+st.write('The current number is ', number)
 
 if st.button("Detecter le sujet d'insatisfaction"):
     st.write('detecter le sujet')
-number = st.number_input('Insert a number',min_value=1,max_value=15,step=1)
-st.write('The current number is ', number)
+
 
 
 
