@@ -59,7 +59,7 @@ try:
 except:
     st.write("Pas d'avis séléctionné")
 
-if st.button("Detecter le sujet d'insatisfaction"):*
+if st.button("Detecter le sujet d'insatisfaction"):
     text = "suce ton pote"
     if text =="":
         st.write("Pas d'avis séléctionné")
