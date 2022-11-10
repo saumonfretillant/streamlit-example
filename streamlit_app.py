@@ -15,9 +15,7 @@ genre = st.sidebar.radio(
 if genre == 'Avis dataset':
     st.write('You selected comedy.')
 else:
-    st.write("You didn't select comedy.")
-
-text= st.sidebar.text_input("Entrez un texte:")
+    text= st.sidebar.text_input("Entrez un texte:")
 
 categories_count = ['1', '2', '3']
 chosen_count = st.selectbox(
