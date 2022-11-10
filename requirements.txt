@@ -4,4 +4,4 @@ streamlit
 textblob
 contractions
 numpy
-pickle
+pickle-mixin
