@@ -33,7 +33,7 @@ st.title("Analyseur de reviews")
 image = Image.open('rhobebou.png')
 st.image(image)
 
-video_file = open(fish-face.mp4, 'rb')
+video_file = open('fish-face.mp4', 'rb')
 video_bytes = video_file.read()
 st.video(video_bytes)
 
