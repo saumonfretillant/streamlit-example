@@ -92,7 +92,7 @@ from textblob import TextBlob
 import pandas as pd
 
 def fonction_prediction(model, vectorizer, n_topics, text):
-  topic_list = ['mauvais accueil','pas bon gout','mauvaise pizza','livraison retardée','rapport qualité/prix mauvais','mauvais service','mauvais burger','trop d\'attente','mauvais poulet','mauvaise ambiance au bar','mauvaise 2eme visite','manager rude et arrogant','mauvais sandwich','mauvais sushi','mauvaise experience d\'habitue']
+  topic_list = ['mauvais accueil','pas bon goût','mauvaise pizza','livraison retardée','rapport qualité/prix mauvais','mauvais service','mauvais burger','trop d\'attente','mauvais poulet','mauvaise ambiance au bar','mauvaise 2ème visite','manager rude et arrogant','mauvais sandwich','mauvais sushis','mauvaise expérience d\'habitués']
   blob = TextBlob(text)
   polarity = blob.sentiment.polarity
   text = preprocess_text(text)
