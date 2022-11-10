@@ -36,15 +36,13 @@ if genre == 'Avis dataset':
     number = st.sidebar.number_input('Choisir le numéro de l\'index',min_value=1,max_value=10000,step=1)
     if st.sidebar.button('Prédire un avis via le numéro d\'index'):
         text = text_dataset(number-1)
-        st.session_state.text = text
         st.sidebar.write(text)
     if st.sidebar.button('Prédire un avis aléatoire'):
         random = rd.randint(0,9999)
         text = text_dataset(random)
-        st.session_state.text = text
         st.sidebar.write(text)
 else:
-    st.session_state.text = st.sidebar.text_input("Entrez un nouvel avis:")
+    text = st.sidebar.text_input("Entrez un nouvel avis:")
 
 number = st.number_input('Choisir le nombre de topics',min_value=1,max_value=15,step=1)
 model = model()
@@ -64,6 +62,7 @@ try:
 except:
     st.write("Pas d'eeeeeee séléctionné")
 
+st.session_state.text = text
 st.write("-------------")
 st.write(st.session_state.text)
 st.write("-------------")
