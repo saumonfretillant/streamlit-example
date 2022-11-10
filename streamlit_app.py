@@ -9,11 +9,13 @@ import math
 import pandas as pd
 import streamlit as st
 
-genre = st.sidebar.radio(
-    "Quel Texte Analyser ?",
-    ('Avis dataset', 'Texte Libre'))
+genre = st.sidebar.radio('Quel Texte Analyser ?',('Avis dataset', 'Texte Libre'))
 if genre == 'Avis dataset':
     number = st.sidebar.number_input('Choisir le numéro de l\'index',min_value=1,max_value=10000,step=1)
+    if st.button('Prédire un avis via le numéro d'\index'):
+        st.write(number)
+    if st.button('Prédire un avis aléatoire'):
+        st.write('RANDOM')
 else:
     text= st.sidebar.text_input("Entrez un nouvel avis:")
 
