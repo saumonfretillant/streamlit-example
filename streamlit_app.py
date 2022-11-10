@@ -13,7 +13,7 @@ genre = st.sidebar.radio('Quel Texte Analyser ?',('Avis dataset', 'Texte Libre')
 if genre == 'Avis dataset':
     number = st.sidebar.number_input('Choisir le numéro de l\'index',min_value=1,max_value=10000,step=1)
     if st.sidebar.button('Prédire un avis via le numéro d\'index'):
-        st.sidebar.write(text_dataset(number))
+        st.sidebar.write(text_dataset(number-1))
     if st.sidebar.button('Prédire un avis aléatoire'):
         random = rd.randint(0,99999)
         st.sidebar.write(text_dataset(random))
