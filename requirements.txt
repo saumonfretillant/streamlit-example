@@ -6,4 +6,4 @@ contractions
 numpy
 pickle-mixin
 scikit-learn
-spacy
+nlp
