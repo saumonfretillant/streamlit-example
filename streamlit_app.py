@@ -13,9 +13,7 @@ import pandas as pd
 DATASET_FILE = "dataset.csv"
 import pickle
 
-if 'key' not in st.session_state:
-    if st.session_state.text == '':
-        st.session_state.text = ''
+
 
 
 def text_dataset(index):
