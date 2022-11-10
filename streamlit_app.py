@@ -12,7 +12,7 @@ from fonctions import fonction_prediction
 import pandas as pd
 DATASET_FILE = "dataset.csv"
 import pickle
-
+from PIL import Image
 
 def text_dataset(index):
     df = pd.read_csv(DATASET_FILE)
@@ -29,6 +29,9 @@ def model():
     return model
 
 st.title("Analyseur de reviews")
+
+image = Image.open('rhobebou.jpg')
+st.image(image)
 
 genre = st.sidebar.radio('Quel texte analyser ?',('Avis du dataset', 'Nouvel avis'))
 if genre == 'Avis du dataset':
