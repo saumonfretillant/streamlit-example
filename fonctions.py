@@ -10,14 +10,14 @@ nltk.download('wordnet')
 nltk.download('omw-1.4')
 nltk.download('stopwords')
 import spacy
-import en_core_web_sm
 
 tokenizer = RegexpTokenizer(r'\w+')
 def tokenize_text(text):
     text_processed = " ".join(tokenizer.tokenize(text))
     return text_processed
 
-nlp = en_core_web_sm.load(disable=['parser', 'tagger', 'ner'])
+nlp = en_core_web_sm.load()
+nlp = spacy.load(disable=['parser', 'tagger', 'ner'])
 
 lemmatizer = WordNetLemmatizer()
 
