@@ -30,7 +30,7 @@ def model():
 
 st.title("Analyseur de reviews")
 
-image = Image.open('rhobebou.jpg')
+image = Image.open('rhobebou.png²')
 st.image(image)
 
 genre = st.sidebar.radio('Quel texte analyser ?',('Avis du dataset', 'Nouvel avis'))
