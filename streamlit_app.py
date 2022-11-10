@@ -8,6 +8,7 @@ import pandas as pd
 import streamlit as st
 import random as rd
 from text_dataset import text_dataset, vect, model
+from fonctions import fonction_prediction
 
 genre = st.sidebar.radio('Quel Texte Analyser ?',('Avis dataset', 'Texte Libre'))
 if genre == 'Avis dataset':
