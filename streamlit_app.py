@@ -13,7 +13,9 @@ import pandas as pd
 DATASET_FILE = "dataset.csv"
 import pickle
 
-session_state = st.session_state['text']
+if 'key' not in st.session_state:
+    st.session_state.text = ''
+
 
 def text_dataset(index):
     df = pd.read_csv(DATASET_FILE)
@@ -31,16 +33,15 @@ def model():
 
 genre = st.sidebar.radio('Quel Texte Analyser ?',('Avis dataset', 'Texte Libre'))
 if genre == 'Avis dataset':
-    session_state['text']=''
     number = st.sidebar.number_input('Choisir le numéro de l\'index',min_value=1,max_value=10000,step=1)
     if st.sidebar.button('Prédire un avis via le numéro d\'index'):
         text = text_dataset(number-1)
-        session_state['text']=text
+        st.session_state.text = text
         st.sidebar.write(text)
     if st.sidebar.button('Prédire un avis aléatoire'):
         random = rd.randint(0,9999)
         text = text_dataset(random)
-        session_state['text']=text
+        st.session_state.text = text
         st.sidebar.write(text)
 else:
     text= st.sidebar.text_input("Entrez un nouvel avis:")
@@ -65,7 +66,7 @@ except:
     st.write("Pas d'avis séléctionné")
 
 st.write("-------------")
-st.write(session_state['text'])
+st.write(st.session_state.text)
 st.write("-------------")
 
 if st.button("Detecter le sujet d'insatisfaction"):
