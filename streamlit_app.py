@@ -16,7 +16,7 @@ chosen_count = st.selectbox(
     categories_count
 )
 
-text= st.text_input("Entrez un texte:")
+text= st.sidebar.text_input("Entrez un texte:")
 if st.button("Detecter le sujet d'insatisfaction"):
     st.write('detecter le sujet')
 number = st.number_input('Insert a number',min_value=1,max_value=15,step=1)
