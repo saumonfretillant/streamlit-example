@@ -11,3 +11,8 @@ def vect():
     with (open("vectorizer", "rb")) as f:
         vectorizer = pickle.load(f)
     return vectorizer
+
+def model():
+    with (open("model", "rb")) as f:
+        model = pickle.load(f)
+    return model
