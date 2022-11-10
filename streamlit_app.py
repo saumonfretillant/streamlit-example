@@ -28,6 +28,7 @@ def model():
         model = pickle.load(f)
     return model
 
+st.title("Analyseur de reviews")
 
 genre = st.sidebar.radio('Quel texte analyser ?',('Avis du dataset', 'Nouvel avis'))
 if genre == 'Avis du dataset':
