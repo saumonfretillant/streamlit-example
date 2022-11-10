@@ -33,6 +33,9 @@ st.title("Analyseur de reviews")
 image = Image.open('rhobebou.png')
 st.image(image)
 
+image2 = Image.open('fish-face.gif')
+st.image(image2)
+
 genre = st.sidebar.radio('Quel texte analyser ?',('Avis du dataset', 'Nouvel avis'))
 if genre == 'Avis du dataset':
     index = st.sidebar.radio('Quelle index voulez-vous choisir ?',('Choisir un index', 'Index aléatoire'))
