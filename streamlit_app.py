@@ -13,6 +13,7 @@ import pandas as pd
 DATASET_FILE = "dataset.csv"
 import pickle
 
+@st.cache()
 def text_dataset(index):
     df = pd.read_csv(DATASET_FILE)
     return(df.text[index])
@@ -31,9 +32,11 @@ genre = st.sidebar.radio('Quel Texte Analyser ?',('Avis dataset', 'Texte Libre')
 if genre == 'Avis dataset':
     number = st.sidebar.number_input('Choisir le numéro de l\'index',min_value=1,max_value=10000,step=1)
     if st.sidebar.button('Prédire un avis via le numéro d\'index'):
+        @st.cache()
         text = text_dataset(number-1)
         st.sidebar.write(text)
     if st.sidebar.button('Prédire un avis aléatoire'):
+        @st.cache()
         random = rd.randint(0,9999)
         text = text_dataset(random)
         st.sidebar.write(text)
