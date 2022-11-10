@@ -3,9 +3,7 @@
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
-from collections import namedtuple
 import altair as alt
-import math
 import pandas as pd
 import streamlit as st
 
