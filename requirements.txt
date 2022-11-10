@@ -1,3 +1,11 @@
 altair
 pandas
 streamlit
+textblob
+contractions
+pickle
+numpy
+nltk
+nltk.tokenize
+nltk.stem
+nltk.corpus
