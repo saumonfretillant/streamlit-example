@@ -29,17 +29,15 @@ def model():
     return model
 
 
-genre = st.sidebar.radio('Quel Texte Analyser ?',('Avis dataset', 'Texte Libre'))
+genre = st.sidebar.radio('Quel texte analyser ?',('Avis du dataset', 'Nouvel avis'))
 if genre == 'Avis dataset':
     index = st.sidebar.radio('Quelle index voulez-vous choisir ?',('Choisir un index', 'Index aléatoire'))
     if index == 'Choisir un index':
         number = st.sidebar.number_input('Choisir le numéro de l\'index',min_value=1,max_value=10000,step=1)
         text = text_dataset(number-1)
-        st.sidebar.write(text)
     else:
         random = rd.randint(0,9999)
         text = text_dataset(random)
-        st.sidebar.write(text)
 else:
     text = st.sidebar.text_input("Entrez un nouvel avis:")
 
@@ -48,6 +46,7 @@ model = model()
 vectorizer = vect()
 
 if st.button("Detecter le sujet d'insatisfaction"):
+    st.write("L\avis choisi : \n',text)
     polarity, topics_list = fonction_prediction(model,vectorizer,number,text)
     topics =""
     for topic in topics_list:
