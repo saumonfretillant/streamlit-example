@@ -46,7 +46,7 @@ model = model()
 vectorizer = vect()
 
 if st.button("Detecter le sujet d'insatisfaction"):
-    st.write("L\avis choisi : \n',text)
+    st.write('L\'avis choisi : \n',text)
     polarity, topics_list = fonction_prediction(model,vectorizer,number,text)
     topics =""
     for topic in topics_list:
