@@ -8,3 +8,4 @@ pickle-mixin
 scikit-learn
 nlp
 spacy
+en_core_web_sm
