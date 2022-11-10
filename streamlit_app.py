@@ -22,7 +22,7 @@ number = st.number_input('Choisir le nombre de topics',min_value=1,max_value=15,
 st.write('The current number is ', number)
 
 if st.button("Detecter le sujet d'insatisfaction"):
-    st.write(test())
+    st.write('salut')
 
 
 
