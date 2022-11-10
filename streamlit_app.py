@@ -60,7 +60,8 @@ except:
     st.write("Pas d'avis séléctionné")
 
 if st.button("Detecter le sujet d'insatisfaction"):
-    text = "suce ton pote"
+    st.write(number)
+    st.write(text)
     if text =="":
         st.write("Pas d'avis séléctionné")
     else:
