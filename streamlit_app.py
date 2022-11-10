@@ -59,6 +59,10 @@ try:
 except:
     st.write("Pas d'avis séléctionné")
 
+st.write("-------------")
+st.write(text)
+st.write("-------------")
+
 if st.button("Detecter le sujet d'insatisfaction"):
     st.write(number)
     st.write(text)
