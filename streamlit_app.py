@@ -57,7 +57,8 @@ if st.button("Detecter le sujet d'insatisfaction"):
         for topic in topics:
             st.write('-',topic)
     else:
-        st.write("polarité du nouvel avis : ",polarity,"les topics de l'avis sont :",topics)
+        st.write("polarité du nouvel avis : ",polarity)
+        st.write("les topics de l'avis sont : ")
         for topic in topics:
             st.write('-',topic)
 
