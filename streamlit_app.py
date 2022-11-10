@@ -6,7 +6,7 @@
 import altair as alt
 import pandas as pd
 import streamlit as st
-from fonctions.py import test
+from fonctions import test
 
 genre = st.sidebar.radio('Quel Texte Analyser ?',('Avis dataset', 'Texte Libre'))
 if genre == 'Avis dataset':
