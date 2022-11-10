@@ -108,3 +108,6 @@ def fonction_prediction(model, vectorizer, n_topics, text):
     for ind in index:
       topics.append(topic_list[ind])
     return polarity,topics
+  else:
+    topics = ""
+    return polarity,topics
