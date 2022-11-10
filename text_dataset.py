@@ -8,10 +8,7 @@ def text_dataset(index):
     df = pd.read_csv(DATASET_FILE)
     return(df.text[index])
 
-def load(file):
-    with (open(file, "rb")) as f:
-        while True:
-            try:
-                model = pickle.load(f)
-            except EOFError:
-                break
+def vect():
+    with (open("vectorizer", "rb")) as f:
+        vectorizer = pickle.load(f)
+        
