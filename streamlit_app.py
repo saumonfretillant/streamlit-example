@@ -9,6 +9,15 @@ import math
 import pandas as pd
 import streamlit as st
 
+genre = st.sidebar.radio(
+    "Quel Texte Analyser ?",
+    ('Avis dataset', 'Texte Libre'))
+if genre == 'Avis dataset':
+    st.write('You selected comedy.')
+else:
+    st.write("You didn't select comedy.")
+
+text= st.sidebar.text_input("Entrez un texte:")
 
 categories_count = ['1', '2', '3']
 chosen_count = st.selectbox(
@@ -16,16 +25,10 @@ chosen_count = st.selectbox(
     categories_count
 )
 
-text= st.sidebar.text_input("Entrez un texte:")
 if st.button("Detecter le sujet d'insatisfaction"):
     st.write('detecter le sujet')
 number = st.number_input('Insert a number',min_value=1,max_value=15,step=1)
 st.write('The current number is ', number)
-genre = st.sidebar.radio(
-    "Quel Texte Analyser ?",
-    ('Avis dataset', 'Texte Libre'))
 
-if genre == 'Avis dataset':
-    st.write('You selected comedy.')
-else:
-    st.write("You didn't select comedy.")
+
+
