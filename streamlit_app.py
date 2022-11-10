@@ -42,7 +42,11 @@ else:
 
 
 number = st.number_input('Choisir le nombre de topics',min_value=1,max_value=15,step=1)
-st.write(fonction_prediction(model(),vect(),number,text))
+model = model()
+vectorizer = vect()
+
+st.write(model,vect,number,text)
+st.write(fonction_prediction(model,vect,number,text))
 
 if st.button("Detecter le sujet d'insatisfaction"):
     if text =="":
