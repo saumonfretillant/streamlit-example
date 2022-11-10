@@ -7,25 +7,42 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 import random as rd
-from text_dataset import text_dataset, vect, model
 from fonctions import fonction_prediction
+
+import pandas as pd
+DATASET_FILE = "dataset.csv"
+import pickle
+
+def text_dataset(index):
+    df = pd.read_csv(DATASET_FILE)
+    return(df.text[index])
+
+def vect():
+    with (open("vectorizer", "rb")) as f:
+        vectorizer = pickle.load(f)
+    return vectorizer
+
+def model():
+    with (open("model", "rb")) as f:
+        model = pickle.load(f)
+    return model
 
 genre = st.sidebar.radio('Quel Texte Analyser ?',('Avis dataset', 'Texte Libre'))
 if genre == 'Avis dataset':
     number = st.sidebar.number_input('Choisir le numéro de l\'index',min_value=1,max_value=10000,step=1)
     if st.sidebar.button('Prédire un avis via le numéro d\'index'):
-        st.sidebar.write(text_dataset(number-1))
+        text = text_dataset(number-1)
     if st.sidebar.button('Prédire un avis aléatoire'):
         random = rd.randint(0,9999)
-        st.sidebar.write(text_dataset(random))
+        text = text_dataset(random)
+    st.sidebar.write(text)
 else:
     text= st.sidebar.text_input("Entrez un nouvel avis:")
 
 number = st.number_input('Choisir le nombre de topics',min_value=1,max_value=15,step=1)
-st.write('The current number is ', number)
 
 if st.button("Detecter le sujet d'insatisfaction"):
-    st.write(fonction_prediction())
+    st.write(fonction_prediction(model(),vect(),number,text)
 
 
 
