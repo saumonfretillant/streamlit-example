@@ -6,4 +6,5 @@ contractions
 numpy
 pickle-mixin
 scikit-learn
-en_core_web_sm
+pip setuptools wheel
+spacy
