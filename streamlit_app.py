@@ -7,10 +7,8 @@ import altair as alt
 import pandas as pd
 import streamlit as st
 import random as rd
-from text_dataset import text_dataset,load
-
-VECTORIZER_FILE = "vectorizer"
-MODEL_FILE = "model"
+from text_dataset import text_dataset
+from text_dataset import vect
 
 genre = st.sidebar.radio('Quel Texte Analyser ?',('Avis dataset', 'Texte Libre'))
 if genre == 'Avis dataset':
@@ -30,8 +28,7 @@ vect = load(VECTORIZER_FILE)
 model = load(MODEL_FILE)
 
 if st.button("Detecter le sujet d'insatisfaction"):
-    st.write(vect)
-    st.write(model)
+    st.write(vect())
 
 
 
