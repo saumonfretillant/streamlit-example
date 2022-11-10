@@ -13,8 +13,8 @@ import pandas as pd
 DATASET_FILE = "dataset.csv"
 import pickle
 
-
-
+if 'key' not in st.session_state:
+        st.session_state.text = ''
 
 def text_dataset(index):
     df = pd.read_csv(DATASET_FILE)
@@ -62,7 +62,7 @@ try:
     else:
         st.write("polarité de l'avis : ",polarity,"l'avis est positif donc il n'y a pas de topics à trouver")
 except:
-    st.write("Pas d'avis séléctionné")
+    st.write("Pas d'eeeeeee séléctionné")
 
 st.write("-------------")
 st.write(st.session_state.text)
