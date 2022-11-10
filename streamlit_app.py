@@ -34,7 +34,7 @@ image = Image.open('rhobebou.png')
 st.image(image)
 
 image2 = Image.open('fish-face.gif')
-st.markdown(image2)
+st.markdown('fish-face.gif')
 
 genre = st.sidebar.radio('Quel texte analyser ?',('Avis du dataset', 'Nouvel avis'))
 if genre == 'Avis du dataset':
