@@ -10,10 +10,6 @@ nltk.download('wordnet')
 nltk.download('omw-1.4')
 nltk.download('stopwords')
 
-def test():
-    testeu = "OSKOUR"
-    return testeu
-
 tokenizer = RegexpTokenizer(r'\w+')
 def tokenize_text(text):
     text_processed = " ".join(tokenizer.tokenize(text))
