@@ -30,12 +30,9 @@ def model():
 
 st.title("Analyseur de reviews")
 
-image = Image.open('rhobebou.png')
+image = Image.open('schema.jpg')
 st.image(image)
 
-video_file = open('fish-face.mp4', 'rb')
-video_bytes = video_file.read()
-st.video(video_bytes)
 
 genre = st.sidebar.radio('Quel texte analyser ?',('Avis du dataset', 'Nouvel avis'))
 if genre == 'Avis du dataset':
