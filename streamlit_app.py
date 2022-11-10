@@ -33,8 +33,9 @@ st.title("Analyseur de reviews")
 image = Image.open('rhobebou.png')
 st.image(image)
 
-image2 = Image.open('fish-face.gif')
-st.markdown('fish-face.gif')
+video = open('fish-face.gif','rb')
+gif = video.read()
+st.video(gif)
 
 genre = st.sidebar.radio('Quel texte analyser ?',('Avis du dataset', 'Nouvel avis'))
 if genre == 'Avis du dataset':
