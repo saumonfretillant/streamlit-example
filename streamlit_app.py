@@ -6,15 +6,17 @@
 import altair as alt
 import pandas as pd
 import streamlit as st
-from test import test
+import random as rd
+from text_dataset import text_dataset
 
 genre = st.sidebar.radio('Quel Texte Analyser ?',('Avis dataset', 'Texte Libre'))
 if genre == 'Avis dataset':
     number = st.sidebar.number_input('Choisir le numéro de l\'index',min_value=1,max_value=10000,step=1)
     if st.sidebar.button('Prédire un avis via le numéro d\'index'):
-        st.sidebar.write(number)
+        st.sidebar.write(text_dataset(number))
     if st.sidebar.button('Prédire un avis aléatoire'):
-        st.sidebar.write('RANDOM')
+        random = rd.randint(0,99999)
+        st.sidebar.write(text_dataset(random))
 else:
     text= st.sidebar.text_input("Entrez un nouvel avis:")
 
@@ -22,7 +24,7 @@ number = st.number_input('Choisir le nombre de topics',min_value=1,max_value=15,
 st.write('The current number is ', number)
 
 if st.button("Detecter le sujet d'insatisfaction"):
-    st.write(test())
+    st.write()
 
 
 
