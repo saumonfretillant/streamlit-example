@@ -11,4 +11,4 @@ def text_dataset(index):
 def vect():
     with (open("vectorizer", "rb")) as f:
         vectorizer = pickle.load(f)
-        
+    return vectorizer
