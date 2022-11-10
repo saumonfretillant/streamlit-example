@@ -4,7 +4,6 @@ streamlit
 textblob
 contractions
 numpy
-nltk
 nltk.tokenize
 nltk.stem
 nltk.corpus
