@@ -69,4 +69,9 @@ if st.button("Detecter le sujet d'insatisfaction"):
         st.write("les topics de l'avis sont : ")
         for topic in topics:
             st.write('-',topic)
+st.write('')
+st.write('')
+st.write('')
+st.write('')
+st.write('')
 st.write('*ARNAUD Simon*')
