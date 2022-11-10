@@ -13,7 +13,7 @@ genre = st.sidebar.radio(
     "Quel Texte Analyser ?",
     ('Avis dataset', 'Texte Libre'))
 if genre == 'Avis dataset':
-    number = st.number_input('Choisir le numéro de l\'index',min_value=1,max_value=10000,step=1)
+    number = st.sidebar.number_input('Choisir le numéro de l\'index',min_value=1,max_value=10000,step=1)
 else:
     text= st.sidebar.text_input("Entrez un nouvel avis:")
 
