@@ -33,9 +33,7 @@ st.title("Analyseur de reviews")
 image = Image.open('rhobebou.png')
 st.image(image)
 
-video = open('fish-face.gif','rb')
-gif = video.read()
-st.video(gif)
+st.markdown("![Alt Text](https://tenor.com/view/fish-face-kanye-vinaldo-people-gif-18195677)")
 
 genre = st.sidebar.radio('Quel texte analyser ?',('Avis du dataset', 'Nouvel avis'))
 if genre == 'Avis du dataset':
