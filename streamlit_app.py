@@ -24,9 +24,6 @@ else:
 number = st.number_input('Choisir le nombre de topics',min_value=1,max_value=15,step=1)
 st.write('The current number is ', number)
 
-vect = load(VECTORIZER_FILE)
-model = load(MODEL_FILE)
-
 if st.button("Detecter le sujet d'insatisfaction"):
     st.write(vect())
 
