@@ -45,7 +45,7 @@ if genre == 'Avis dataset':
         st.session_state.text = text
         st.sidebar.write(text)
 else:
-    text= st.sidebar.text_input("Entrez un nouvel avis:")
+    st.session_state.text = st.sidebar.text_input("Entrez un nouvel avis:")
 
 number = st.number_input('Choisir le nombre de topics',min_value=1,max_value=15,step=1)
 model = model()
