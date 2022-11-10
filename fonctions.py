@@ -95,19 +95,15 @@ def fonction_prediction(model, vectorizer, n_topics, text):
   topic_list = ['mauvais accueil','pas bon gout','mauvaise pizza','livraison retardée','rapport qualité/prix mauvais','mauvais service','mauvais burger','trop d\'attente','mauvais poulet','mauvaise ambiance au bar','mauvaise 2eme visite','manager rude et arrogant','mauvais sandwich','mauvais sushi','mauvaise experience d\'habitue']
   blob = TextBlob(text)
   polarity = blob.sentiment.polarity
-  if polarity<0 :
-    text = preprocess_text(text)
-    text = [text]
-    X = vectorizer.transform(text)
-    doc_topic = model.transform(X)
-    index=[]
-    argsort = np.argsort(doc_topic, axis = 1 )
-    for i in range(n_topics):
-      index.append(argsort[0][len(argsort[0])-(i+1)])
-    topics=[]
-    for ind in index:
-      topics.append(topic_list[ind])
-    return polarity,topics
-  else:
-    topics = ""
-    return polarity,topics
+  text = preprocess_text(text)
+  text = [text]
+  X = vectorizer.transform(text)
+  doc_topic = model.transform(X)
+  index=[]
+  argsort = np.argsort(doc_topic, axis = 1 )
+  for i in range(n_topics):
+    index.append(argsort[0][len(argsort[0])-(i+1)])
+  topics=[]
+  for ind in index:
+    topics.append(topic_list[ind])
+  return polarity,topics
