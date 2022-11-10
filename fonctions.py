@@ -9,13 +9,14 @@ nltk.download('averaged_perceptron_tagger')
 nltk.download('wordnet')
 nltk.download('omw-1.4')
 nltk.download('stopwords')
+import spacy
+import en_core_web_sm
 
 tokenizer = RegexpTokenizer(r'\w+')
 def tokenize_text(text):
     text_processed = " ".join(tokenizer.tokenize(text))
     return text_processed
 
-import en_core_web_sm
 nlp = en_core_web_sm.load(disable=['parser', 'tagger', 'ner'])
 
 lemmatizer = WordNetLemmatizer()
