@@ -49,12 +49,12 @@ vectorizer = vect()
 
 if st.button("Detecter le sujet d'insatisfaction"):
     polarity, topics_list = fonction_prediction(model,vectorizer,number,text)
-    if polarity<0:
+    if genre == 'Avis dataset':
         topics =""
         for topic in topics_list:
             topics += topic+' , '
         topics = topics[0:-3]
-        st.write("polarité de l'avis : ",polarity,"les topics de l'avis sont : ",topics)
+        st.write(les topics de l'avis sont : ",topics)
     else:
-        st.write("polarité de l'avis : ",polarity,"l'avis est positif donc il n'y a pas de topics à trouver")
+        st.write("polarité du nouvel avis : ",polarity,"les topics de l'avis sont : ",topics")
 
