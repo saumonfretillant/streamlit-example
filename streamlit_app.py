@@ -58,7 +58,9 @@ try:
         st.write("polarité de l'avis : ",polarity,"l'avis est positif donc il n'y a pas de topics à trouver")
 except:
     st.write("Pas d'avis séléctionné")
-if st.button("Detecter le sujet d'insatisfaction"):
+
+if st.button("Detecter le sujet d'insatisfaction"):*
+    text = "suce ton pote"
     if text =="":
         st.write("Pas d'avis séléctionné")
     else:
