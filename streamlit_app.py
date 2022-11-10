@@ -46,7 +46,7 @@ model = model()
 vectorizer = vect()
 
 st.write(model,vectorizer,number,text)
-st.write(fonction_prediction(model,vect,number,text))
+st.write(fonction_prediction(model,vectorizer,number,text))
 
 if st.button("Detecter le sujet d'insatisfaction"):
     if text =="":
