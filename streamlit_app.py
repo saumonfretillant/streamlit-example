@@ -56,7 +56,7 @@ try:
         st.write("polarité de l'avis : ",polarity,"les topics de l'avis sont : ",topics)
     else:
         st.write("polarité de l'avis : ",polarity,"l'avis est positif donc il n'y a pas de topics à trouver")
-expect:
+except:
     st.write("Pas d'avis séléctionné")
 if st.button("Detecter le sujet d'insatisfaction"):
     if text =="":
