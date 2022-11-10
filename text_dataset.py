@@ -1,8 +1,6 @@
 
 import pandas as pd
 DATASET_FILE = "dataset.csv"
-VECTORIZER_FILE = "vectorizer"
-MODEL_FILE = "model"
 import pickle
 
 def text_dataset(index):
