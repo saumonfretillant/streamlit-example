@@ -26,6 +26,7 @@ st.write('The current number is ', number)
 
 if st.button("Detecter le sujet d'insatisfaction"):
     st.write(vect())
+    st.write(model())
 
 
 
