@@ -6,7 +6,7 @@
 import altair as alt
 import pandas as pd
 import streamlit as st
-#from fonctions import test
+from test.py import test
 
 genre = st.sidebar.radio('Quel Texte Analyser ?',('Avis dataset', 'Texte Libre'))
 if genre == 'Avis dataset':
@@ -22,7 +22,7 @@ number = st.number_input('Choisir le nombre de topics',min_value=1,max_value=15,
 st.write('The current number is ', number)
 
 if st.button("Detecter le sujet d'insatisfaction"):
-    st.write('salut')
+    st.write(test())
 
 
 
