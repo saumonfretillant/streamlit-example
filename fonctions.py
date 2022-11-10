@@ -9,7 +9,6 @@ nltk.download('averaged_perceptron_tagger')
 nltk.download('wordnet')
 nltk.download('omw-1.4')
 nltk.download('stopwords')
-import spacy
 
 tokenizer = RegexpTokenizer(r'\w+')
 def tokenize_text(text):
