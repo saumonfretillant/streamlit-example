@@ -30,7 +30,7 @@ def model():
 
 
 genre = st.sidebar.radio('Quel texte analyser ?',('Avis du dataset', 'Nouvel avis'))
-if genre == 'Avis dataset':
+if genre == 'Avis du dataset':
     index = st.sidebar.radio('Quelle index voulez-vous choisir ?',('Choisir un index', 'Index aléatoire'))
     if index == 'Choisir un index':
         number = st.sidebar.number_input('Choisir le numéro de l\'index',min_value=1,max_value=10000,step=1)
@@ -52,7 +52,7 @@ if st.button("Detecter le sujet d'insatisfaction"):
     for topic in topics_list:
         topics += topic+' , '
     topics = topics[0:-3]
-    if genre == 'Avis dataset':
+    if genre == 'Avis du dataset':
         st.write("les topics de l'avis sont : ",topics)
     else:
         st.write("polarité du nouvel avis : ",polarity,"les topics de l'avis sont : ",topics)
