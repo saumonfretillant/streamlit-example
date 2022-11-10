@@ -40,12 +40,15 @@ if genre == 'Avis dataset':
 else:
     text= st.sidebar.text_input("Entrez un nouvel avis:")
 
-st.write(text)
+
 number = st.number_input('Choisir le nombre de topics',min_value=1,max_value=15,step=1)
 
 if st.button("Detecter le sujet d'insatisfaction"):
-    st.write(text)
-    #st.write(fonction_prediction(model(),vect(),number,text))
+    if text =="":
+        st.write("Pas d'avis séléctionné")
+    else:
+        st.write(text)
+        #st.write(fonction_prediction(model(),vect(),number,text))
 
 
 
