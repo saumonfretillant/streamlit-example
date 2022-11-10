@@ -15,7 +15,7 @@ if genre == 'Avis dataset':
     if st.sidebar.button('Prédire un avis via le numéro d\'index'):
         st.sidebar.write(text_dataset(number-1))
     if st.sidebar.button('Prédire un avis aléatoire'):
-        random = rd.randint(0,99999)
+        random = rd.randint(0,9999)
         st.sidebar.write(text_dataset(random))
 else:
     text= st.sidebar.text_input("Entrez un nouvel avis:")
