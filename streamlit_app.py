@@ -75,6 +75,7 @@ if st.button("Detecter le sujet d'insatisfaction"):
     if st.session_state.text =="":
         st.write("Pas d'avis séléctionné")
     else:
+        st.write("fegooeeogeegoe")
         #st.write(fonction_prediction(model(),vect(),number,text))
 
 
